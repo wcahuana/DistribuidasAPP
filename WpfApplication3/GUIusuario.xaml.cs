@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
-using WpfApplication3.AREAS.CSANPABLO;
+using WpfApplication3.AREAS.CEDICSEM;
 
 
 namespace WpfApplication3
@@ -112,7 +112,7 @@ namespace WpfApplication3
                 TB.Name = "tblpersonas";
                 TB.Style = this.FindResource("style_1") as Style;
 
-                TB.Content = new CSANPABLO_custom();
+                TB.Content = new CEDICSEM();
           
                 TabControlAreas.Items.Add(TB);
                 

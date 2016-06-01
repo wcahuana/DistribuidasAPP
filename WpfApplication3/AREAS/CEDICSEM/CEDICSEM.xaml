@@ -1,0 +1,301 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             x:Name="lcperu1" x:Class="WpfApplication3.AREAS.CEDICSEM.CEDICSEM" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" Width="1008"  >
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+
+
+            <Style x:Key="LabelTemplate2" TargetType="{x:Type Label}">
+                <Setter Property="BorderBrush" Value="#6C93E0" />
+                <Setter Property="BorderThickness" Value="1" />
+
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Canvas Opacity="0.7" Name="ContenidoPagina" Margin="0,-15,0,15" Background="LightSeaGreen"  >
+            <Canvas Name="RegionEstadisticasYEncabezado" Height="51" Width="924" Canvas.Left="64" Canvas.Top="-1" Visibility="Hidden">
+        
+                <TextBlock x:Name="lestadisticas" FontWeight="Bold" FontSize="18" Canvas.Left="320" ><Run Language="es-cl" Text="INFORMACION ADICIONAL" FontStyle="Italic" FontSize="16"/></TextBlock>
+                <Label  Height="auto" Width="auto"  HorizontalContentAlignment="Right" x:Name="latendidosAgente" BorderBrush="#FF6808" BorderThickness="1"   FontWeight="Bold" FontStyle="Italic" Canvas.Left="644" Canvas.Top="30"  />
+                <Label  Height="auto" Width="auto"   HorizontalContentAlignment="Right" x:Name="ltotales" BorderBrush="#FF6808" BorderThickness="1"   FontWeight="Bold" FontStyle="Italic" Canvas.Left="454" Canvas.Top="30"    />
+                <Label  Width="auto" HorizontalContentAlignment="Right"   x:Name="lfechaHora" BorderBrush="#FF6808" BorderThickness="1"   FontStyle="Italic" Canvas.Left="59" Canvas.Top="30"/>
+                <Label  Width="auto" HorizontalContentAlignment="Right"  x:Name="lnumeroEntrante" BorderBrush="#FF6808" BorderThickness="1"   FontStyle="Italic" Canvas.Left="244" Canvas.Top="30"/>
+            </Canvas>
+            <!--DATOS DEMOGRAFICOS-->
+            <Canvas Name="RegionDatosDemograficos" Height="366" Width="1001" Canvas.Top="40" Canvas.Left="1"  >
+                <Button Canvas.Left="480" x:Name="btnVerCliente" TabIndex="12" Width="128" Height="42" Canvas.Top="-20" Click="btnVerCliente_Click" >
+                    <DockPanel>
+                        <TextBlock TextWrapping="Wrap">Ver Cliente</TextBlock>
+                    </DockPanel>
+                </Button>
+                <TextBlock x:Name="lDemograficos" Text="Datos Del Cliente"  FontWeight="Bold" FontSize="18" Canvas.Top="2" Canvas.Left="5" Foreground="#FF280436"/>
+                <Line X1="0" X2="300" Y1="50" Y2="50" Stroke="#F94B4B" Canvas.Left="7" Canvas.Top="-23"  />
+
+
+                <GroupBox  Width="450" Height="138"  Canvas.Left="8" Canvas.Top="36">
+
+                    <GroupBox.Header >
+                        <WrapPanel>
+                            <CheckBox Name="chkDatosPersonales" IsChecked="True" VerticalAlignment="Stretch" Content="Datos Personales" Foreground="#ffffff" Width="127"  Unchecked="CheckBox_Unchecked"  Checked="CheckBox_Checked"/>
+                        </WrapPanel>
+                    </GroupBox.Header>
+                    <Canvas>
+                        <Label  Height="auto" Width="113" Canvas.Left="3"   HorizontalContentAlignment="Left"   Canvas.Top="-2" >Nombre Cliente</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="102" Height="auto" x:Name="txtNombre"  Width="280" TabIndex="3" Canvas.Top="4"/>
+
+                        <Button x:Name="IconButtonTitular" Tag="buscar" 
+                    
+                    Margin="{Binding ElementName=MarginSlider, Path=Value}" 
+                    Padding="{Binding ElementName=PaddingSlider, Path=Value}" Canvas.Left="403" Height="auto" Click="IconButtondatos_Click" >
+                            <Image Source="/WpfApplication3;component/Resources/lupa-icon.png" Width="25" Height="25" />
+                        </Button>
+                        <GroupBox Name="prueba1"  Width="343" Height="163"  Canvas.Left="-7" Canvas.Top="648">
+
+                            <GroupBox.Header >
+                                <WrapPanel>
+                                    <CheckBox Name="prueba111"  IsEnabled="False" VerticalAlignment="Stretch" Content="CONTACTABILIDAD" Foreground="#ffffff" Width="284"  Unchecked="CheckBox_Unchecked"  Checked="CheckBox_Checked" Height="30"/>
+                                </WrapPanel>
+                            </GroupBox.Header>
+
+                        </GroupBox>
+                        <GroupBox Name="prueba2" Width="370" Height="163"  Canvas.Left="336" Canvas.Top="648">
+                            <GroupBox.Header >
+                                <WrapPanel>
+                                    <CheckBox  IsEnabled="False" VerticalAlignment="Stretch" Content="ACCION" Foreground="#ffffff" Width="284"  Unchecked="CheckBox_Unchecked"  Checked="CheckBox_Checked" Height="30"/>
+                                </WrapPanel>
+                            </GroupBox.Header>
+                        </GroupBox>
+                        <GroupBox Name="prueba3"  Width="270" Height="163"  Canvas.Left="706" Canvas.Top="648">
+                            <GroupBox.Header >
+                                <WrapPanel>
+                                    <CheckBox  IsEnabled="False" VerticalAlignment="Stretch" Content="OBSERVACIONES" Foreground="#ffffff" Width="284"  Unchecked="CheckBox_Unchecked"  Checked="CheckBox_Checked" Height="30"/>
+                                </WrapPanel>
+                            </GroupBox.Header>
+                            <Canvas/>
+                        </GroupBox>
+                        <Label  Height="auto" Width="113" Canvas.Left="-1"   HorizontalContentAlignment="Left"   Canvas.Top="51" Content="Telefono 1" />
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="101" Height="auto" x:Name="TxtTelefono1"  Width="100" TabIndex="3" Canvas.Top="53"/>
+                        <Label  Height="auto"  Width="auto" Canvas.Left="-1" Canvas.Top="77" HorizontalContentAlignment="Right"   Content="Celular"/>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="101" Height="auto" x:Name="TxtCelular"  Width="100" TabIndex="3" Canvas.Top="81"/>
+                        <Label  Height="auto" Width="96" Canvas.Left="190"   HorizontalContentAlignment="Right" Canvas.Top="50" Content="Telefono 2" RenderTransformOrigin="0.021,0.385" />
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="319" Height="auto" x:Name="TxtTelefono2"  Width="108" TabIndex="3" Canvas.Top="53"/>
+                        <Label  Height="auto"  Width="auto" Canvas.Left="218" Canvas.Top="76" HorizontalContentAlignment="Right" Content="Email" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-1.005"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="319" Height="auto" x:Name="TxtEmail"  Width="108" TabIndex="3" Canvas.Top="81"/>
+                        <TextBox      VerticalContentAlignment="Center" Canvas.Left="101" Canvas.Top="28" Height="auto" x:Name="TxtDocumento" Width="113"  BorderBrush="#FFFF5353"  TabIndex="0"  />
+                        <Label  Height="auto"  Width="auto" Canvas.Left="1" Canvas.Top="25" HorizontalContentAlignment="Right" Content="Nro Documento" />
+                    </Canvas>
+                </GroupBox>
+                <GroupBox Width="258" Height="138"  Canvas.Left="463" Canvas.Top="36">
+                    <GroupBox.Header>
+                        <WrapPanel>
+                            <CheckBox Name="chkDatosContractuales" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked" IsChecked="True" VerticalAlignment="Stretch" Content="Datos Contractuales"  Foreground="#ffffff" Width="137" Height="20" />
+                        </WrapPanel>
+                    </GroupBox.Header>
+                    <Canvas>
+                        <Label  Height="auto" Width="113" Canvas.Left="3"   HorizontalContentAlignment="Left" Canvas.Top="-2" >N° Contrato</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="81" Height="auto" x:Name="txtNcontrato"  Width="131" TabIndex="3" Canvas.Top="4"/>
+                        <Button x:Name="IconButtonContractuales" Tag="buscar"
+                   
+                    Margin="{Binding ElementName=MarginSlider, Path=Value}" 
+                    Padding="{Binding ElementName=PaddingSlider, Path=Value}" Canvas.Left="219" Height="auto" Click="IconButtonContractuales_Click">
+                            <Image Source="/WpfApplication3;component/Resources/lupa-icon.png" Width="25" Height="25" />
+                        </Button>
+                        <Label  Height="auto"  Width="auto" Canvas.Left="3" Canvas.Top="24" HorizontalContentAlignment="Right" >Vigencia</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="81" Height="auto" x:Name="txtVigencia"  Width="131" TabIndex="3" Canvas.Top="29"/>
+
+
+
+                    </Canvas>
+                </GroupBox>
+                <GroupBox  Width="265" Height="138"  Canvas.Left="728" Canvas.Top="36">
+                    <GroupBox.Header>
+                        <WrapPanel>
+                            <CheckBox Name="chkDatosSecuencia" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked"  IsChecked="True" VerticalAlignment="Stretch" Content="Datos Secuencia"  Foreground="#ffffff" Width="117" Height="20" />
+                        </WrapPanel>
+                    </GroupBox.Header>
+                    <Canvas>
+                        <Label  Height="auto" Width="113" Canvas.Left="3"   HorizontalContentAlignment="Left"  Canvas.Top="-2" >N° Secuencia</Label>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="96" Height="auto" x:Name="txtSecuencia"  Width="131" TabIndex="3" Canvas.Top="4"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="3" Canvas.Top="24" HorizontalContentAlignment="Right" >Estado</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="96" Height="auto" x:Name="txtEstado"  Width="131" TabIndex="3" Canvas.Top="28"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="3" Canvas.Top="50" HorizontalContentAlignment="Right" >Ult Modificacion</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="96" Height="auto" x:Name="txtModificacion"  Width="131" TabIndex="3" Canvas.Top="54"/>
+
+
+                    </Canvas>
+                </GroupBox>
+                <TextBlock x:Name="lDemograficos_Copy" Text="Datos Del Plan de Pagos"  FontWeight="Bold" FontSize="18" Foreground="#FF280436" Canvas.Left="10" Canvas.Top="178" Width="228"/>
+                <Line X1="0" X2="250" Y1="225" Y2="225" Stroke="#F94B4B" Canvas.Left="7" Canvas.Top="-23" Width="231"  />
+
+                <GroupBox Name="GrbCategorizacion" Width="242" Height="157"  Canvas.Left="8" Canvas.Top="204">
+                    <GroupBox.Header>
+                        <WrapPanel>
+                            <CheckBox   IsChecked="True" VerticalAlignment="Stretch" Content="Datos Categorización"  Foreground="#ffffff" Width="154" Height="20" />
+                        </WrapPanel>
+                    </GroupBox.Header>
+                    <Canvas>
+                        <Label  Height="auto" Width="113" Canvas.Left="3"   HorizontalContentAlignment="Left"   Canvas.Top="-2" >Categorización</Label>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="92" Height="auto" x:Name="txtCategorizacion"  Width="131" TabIndex="3" Canvas.Top="4"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="3" Canvas.Top="24" HorizontalContentAlignment="Right" >Asignado a</Label>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="92" Height="auto" x:Name="txtAsignadoA"  Width="131" TabIndex="3" Canvas.Top="29"/>
+
+
+                    </Canvas>
+                </GroupBox>
+                <GroupBox Name="GrbCuota" Width="736" Height="157"  Canvas.Left="255" Canvas.Top="204" >
+                    <GroupBox.Header>
+                        <WrapPanel>
+                            <CheckBox   IsChecked="True" VerticalAlignment="Stretch" Content="Datos Cuota"  Foreground="#ffffff" Width="113" Height="20" />
+                        </WrapPanel>
+                    </GroupBox.Header>
+                    <Canvas>
+                        <Label  Height="auto" Width="113" Canvas.Left="3"   HorizontalContentAlignment="Left" Canvas.Top="-2" >N° Cuota</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="108" Height="auto" x:Name="txtNCuota"  Width="106" TabIndex="3" Canvas.Top="4"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="2" Canvas.Top="24" HorizontalContentAlignment="Right" >Estado Cuota</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="108" Height="auto" x:Name="txtEstadoCuota"  Width="106" TabIndex="3" Canvas.Top="28"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="1" Canvas.Top="50" HorizontalContentAlignment="Right" >Fecha Emisión</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="110" Height="auto" x:Name="txtFechaEmision"  Width="106" TabIndex="3" Canvas.Top="54"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="76" HorizontalContentAlignment="Right"  Canvas.Left="1">Fecha Vencimiento</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="110" Height="auto" x:Name="txtFechaVencimiento"  Width="106" TabIndex="3" Canvas.Top="79"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="99" HorizontalContentAlignment="Right"   Canvas.Left="1">Banco</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="110" Height="auto" x:Name="txtBanco"  Width="106" TabIndex="3" Canvas.Top="103"/>
+
+
+
+                        <Label  Height="auto" Width="113" Canvas.Left="217"   HorizontalContentAlignment="Left"   Canvas.Top="-2" >Monto</Label>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="304" Height="auto" x:Name="txtAporte"  Width="99" TabIndex="3" Canvas.Top="4"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="217" Canvas.Top="27" HorizontalContentAlignment="Right"  >Forma Pago</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="304" Height="auto" x:Name="txtFpago"  Width="99" TabIndex="3" Canvas.Top="28"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="49" HorizontalContentAlignment="Right"  Canvas.Left="217">Descuento</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="304" Height="auto" x:Name="txtdescuento"  Width="99" TabIndex="3" Canvas.Top="52"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="71" HorizontalContentAlignment="Right"   Canvas.Left="217">Empresa</Label>
+                        <TextBox Opacity="0.7"  VerticalContentAlignment="Center" Canvas.Left="304" Height="auto" x:Name="txtEmpresa"  Width="99" TabIndex="3" Canvas.Top="80"/>
+
+                        <Label  Height="auto" Width="113" Canvas.Left="404"   HorizontalContentAlignment="Left"  Canvas.Top="-2" >Cargo a cuenta</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="536" Height="auto" x:Name="txtcargo"  Width="50" TabIndex="3" Canvas.Top="4"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Left="404" Canvas.Top="26" HorizontalContentAlignment="Right" >Código/Nom Vendedor</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="536" Height="auto" x:Name="txtCodigoAsesor"  Width="50" TabIndex="3" Canvas.Top="30"/>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="590" Height="auto" x:Name="txtNombreAsesor"  Width="149" TabIndex="3" Canvas.Top="30"/>
+
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="52" HorizontalContentAlignment="Right" Canvas.Left="404">Deudas Antiguos</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="536" Height="auto" x:Name="txtPreexistencias"  Width="50" TabIndex="3" Canvas.Top="55"/>
+
+                        <Label  Height="auto"  Width="auto" Canvas.Top="74" HorizontalContentAlignment="Right" Canvas.Left="403">Nro. Renovación</Label>
+                        <TextBox Opacity="0.7" VerticalContentAlignment="Center" Canvas.Left="536" Height="auto" x:Name="txtRenovacion"  Width="50" TabIndex="3" Canvas.Top="79"/>
+
+
+                    </Canvas>
+                </GroupBox>
+                <!--DATOS DEL EJECUTIVO ASIGNADO-->
+            </Canvas>
+
+            <!--DATOS DEL NEGOCIO-->
+
+
+            <Canvas Name="regionNegocio"  Canvas.Top="437" Height="auto" Width="auto" Canvas.Left="1" >
+                <Button Canvas.Left="300" x:Name="btnHistorialPagos" TabIndex="12" Width="148" Canvas.Top="-20" >
+                    <DockPanel>
+                        <Image Source="/WpfApplication3;component/Resources/cuentas.png" Height="28" Width="42"/>
+                        <TextBlock TextWrapping="Wrap">Ver Historiales Pago</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Canvas.Left="500" x:Name="btnContratos" TabIndex="12" Width="128" Height="42" Canvas.Top="-20" Click="btnVerContratos_Click" >
+                    <DockPanel>
+                        <Image Source="/WpfApplication3;component/Resources/96.png" Height="28" Width="42"/>
+                        <TextBlock TextWrapping="Wrap">Ver Contratos</TextBlock>
+                    </DockPanel>
+                </Button>
+
+            </Canvas>
+            <Canvas Name="regionHistoriales"  Canvas.Top="468" Height="190" Width="989" Canvas.Left="-1" >
+                <TextBlock x:Name="lhistorial" Text="Bitacora de llamadas"  FontWeight="Bold" FontSize="18" Canvas.Top="47" Canvas.Left="5" Foreground="#FF280436"/>
+                <Line X1="0" X2="400" Y1="50" Y2="50" Stroke="#9554CA" Canvas.Left="7" Canvas.Top="202"  />
+                <DataGrid IsReadOnly="true"  CanUserAddRows="false"  AutoGenerateColumns="False"  MaxHeight="160" x:Name="grdhistorias" MaxWidth="989" TabIndex="14" Canvas.Top="91" Width="765">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="150"
+				                            Binding="{Binding FechaInicioCall}"
+				                            Header="Fecha" />
+                        <DataGridTextColumn Width="150"
+				                            Binding="{Binding FechaTerminoCall}"
+				                            Header="Hora" />
+                        <DataGridTextColumn Width="150"
+				                        Binding="{Binding Agente}"
+				                        Header="Personal" />
+                        <DataGridTextColumn Width="150"
+				                            Binding="{Binding Accion}"
+				                            Header="Resultado llamada" />
+                        <DataGridTextColumn Width="*"
+				                        Binding="{Binding Observaciones}"
+				                        Header="Observaciones" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Canvas>
+            <Canvas Name="regionTipificaciones" Height="391" Width="1008" Canvas.Top="700">
+                <TextBlock x:Name="lTipificaciones" Text="Tipificaciones"  FontWeight="Bold" FontSize="18" Canvas.Top="-28" Canvas.Left="5" Foreground="#FF280436"/>
+                <UserControl Name="tipificaciones" MaxWidth="450" Grid.Row="0" Grid.ColumnSpan="2" MaxHeight="300" Canvas.Top="140" />
+                <Label Opacity="0.7" x:Name="lobservaciones" Width="115" Content="OBSERVACIONES:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Canvas.Left="250" Canvas.Top="306" />
+                <TextBox  x:Name="txtmotivo" TabIndex="13" TextWrapping="Wrap"  AcceptsReturn="True" Width="343" HorizontalAlignment="Right" TextChanged="tbx_observacion_TextChanged" Canvas.Left="370" Canvas.Top="263" Height="112" MaxLength="250" />
+
+                <Button  x:Name="btnGuardar" TabIndex="12"  Grid.Row="3" HorizontalAlignment="Center"  Width="108" Canvas.Left="493" Canvas.Top="442" Click="btnGuardar_Click">
+                    <DockPanel>
+                        <Image Source="/WpfApplication3;component/Resources/save-icon.png" Height="28" Width="42"/>
+                        <TextBlock><Run Text="Guardar"/></TextBlock>
+                    </DockPanel>
+                </Button>
+
+                <ComboBox  x:Name="cmbnivel1"  Canvas.Left="40" Canvas.Top="142"  TabIndex="6"  Width="262" Height="20" Loaded="cmbnivel1_Loaded" SelectionChanged="cmbnivel1_SelectionChanged">
+                </ComboBox>
+
+                <TextBlock x:Name="lblobservaciones" TextWrapping="WrapWithOverflow"  Canvas.Left="728" Canvas.Top="122" Height="72" Width="255"/>
+                <ComboBox  x:Name="cmbnivel2"  Canvas.Left="385" Canvas.Top="140"  TabIndex="6"  Width="262" Height="20"  SelectionChanged="cmbnivel2_SelectionChanged"/>
+                <DatePicker Canvas.Left="454" Canvas.Top="179" x:Name="FechaAccion"/>
+            </Canvas>
+
+            <Menu DockPanel.Dock="Top" Visibility="Hidden"  Background="#FFACCFEE" Canvas.Left="400" BorderBrush="#FF7CBCF3" BorderThickness="1">
+                <MenuItem Header="Personas" FontSize="15"  FontStyle="Italic"  >
+                    <MenuItem Header="Listado de Empleadores" >
+                        <MenuItem.Icon>
+                            <Image Source="/WpfApplication3;component/Resources/lupa-icon.png"  Height="15" Width="21"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Envíos de Información" >
+                        <MenuItem.Icon>
+                            <Image Source="/WpfApplication3;component/Resources/sendMail.png"  Height="15" Width="21"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+            <!--Pie- de pagina-->
+        </Canvas>
+    </Grid>
+</UserControl>
